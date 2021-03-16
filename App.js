@@ -6,6 +6,10 @@ import { Ionicons } from '@expo/vector-icons';
 ///Components Imports
 import HomeScreen from "./src/screens/Home"
 import Post from "./src/components/Post"
+//DATA
+import feed from "./assets/data/feed"
+
+const post1 = feed[1]
 
 export default function App() {
   return (
@@ -13,7 +17,8 @@ export default function App() {
       <StatusBar style="auto" />
       <SafeAreaView>
           {/* <HomeScreen /> */}
-          <Post />
+          <Post post={post1}/>
+          
       </SafeAreaView>
     </View>
   );

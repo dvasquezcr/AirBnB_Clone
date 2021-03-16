@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
  
     container:{
         margin:20,
+        paddingTop:20,
     },
  
     image:{

@@ -2,29 +2,30 @@ import React from 'react';
 import { View, Text, Image} from 'react-native';
 
 import styles from "./styles"
-const Post= () => {
-  return (
+const Post= (props) => {
+
+   const post = props.post
+
+   return (
     <View style={styles.container}>
          <Image 
             style={styles.image}
-            source = {{ uri:"https://revistasumma.com/wp-content/uploads/2019/09/airbnb-1080x675.jpg"}}
+            source = {{ uri: post.image}}
          />
 
-         <Text style={styles.bedrooms}>1 bed 1 bedroom</Text>
+         <Text style={styles.bedrooms}>{post.bed} bed {post.bedroom} bedroom</Text>
 
          <Text style={styles.description} numberOfLines={2}>
-            Bright room in the heart of the city. 
-            Bright room in the heart of the city. 
-            Bright room in the heart of the city.
+               {post.type}. {post.title}
          </Text>
 
          <Text style={styles.prices}>
-            <Text style={styles.oldPrice}>$36</Text>
-            <Text style={styles.newPrice}> $30 </Text>
+            <Text style={styles.oldPrice}>${post.oldPrice}</Text>
+            <Text style={styles.newPrice}> ${post.newPrice} </Text>
             / night
          </Text>
 
-         <Text style={styles.totalPrice}>$230 total</Text>
+         <Text style={styles.totalPrice}>${post.totalPrice} total</Text>
 
     </View>
    )
