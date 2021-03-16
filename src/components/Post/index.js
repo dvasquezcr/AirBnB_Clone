@@ -12,15 +12,16 @@ const Post= () => {
 
          <Text style={styles.bedrooms}>1 bed 1 bedroom</Text>
 
-         <Text style={styles.description}>Bright room in the heart of the city. 
-                                          Bright room in the heart of the city. 
-                                          Bright room in the heart of the city
+         <Text style={styles.description} numberOfLines={2}>
+            Bright room in the heart of the city. 
+            Bright room in the heart of the city. 
+            Bright room in the heart of the city.
          </Text>
 
          <Text style={styles.prices}>
-            <Text style={styles.oldprice}>$36</Text>
-            <Text style={styles.newprice}> $36</Text>
-            Niht
+            <Text style={styles.oldPrice}>$36</Text>
+            <Text style={styles.newPrice}> $30 </Text>
+            / night
          </Text>
 
          <Text style={styles.totalPrice}>$230 total</Text>

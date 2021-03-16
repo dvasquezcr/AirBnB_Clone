@@ -20,25 +20,30 @@ const styles = StyleSheet.create({
 
     description: {
         fontSize: 18,
-        lineHeight: 20,
+        lineHeight: 26,
     }, 
 
     prices:{
-        fontSize: 18,
-        
+        fontSize: 20,
+        color: "black",
+        marginVertical: 10,
     },
 
-    oldprice:{
+    oldPrice:{
         color: "#5b5b5b",
-        textDecorationLine: 'line-through'
+        textDecorationLine: 'line-through',
+        fontWeight: "bold",
     },
 
-    newprice:{
+    newPrice:{
+        color: "black",
         fontWeight: "bold",
     },
 
     totalPrice:{
-        
+        color: "#5b5b5b",
+        textDecorationLine: "underline",
+        fontSize: 16,
     }
 
 
