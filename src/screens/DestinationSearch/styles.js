@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 
  textInput:{
     fontSize: 20,
-    height:50,
+    marginBottom: 20,
  },
 
  row:{
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
    alignItems: "center",
    paddingVertical: 15,
    borderBottomWidth: 1,
-   borderColor:"lightgrey"
+   borderColor: "lightgrey",
  },
 
  iconContainer:{

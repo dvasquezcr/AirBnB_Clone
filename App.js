@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from "./src/screens/Home"
 import SearchResultSreen from "./src/screens/SearchResults"
 import DestinationSearchScreen from "./src/screens/DestinationSearch"
+import GuestsScreen from "./src/screens/Guests"
 
 import Post from "./src/components/Post"
 //DATA
@@ -22,7 +23,8 @@ export default function App() {
           {/* <HomeScreen /> */}
           {/* <Post post={post1}/> */}
           {/* <SearchResultSreen /> */}
-          <DestinationSearchScreen />
+          {/* <DestinationSearchScreen /> */}
+          <GuestsScreen />
       </SafeAreaView>
     </View>
   );

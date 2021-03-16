@@ -28,8 +28,7 @@ const DestinationSearchScreen = () => {
                         <Entypo name="location-pin" size={30} color="black" />
                     </View>
                     <Text style={styles.locationText}>{item.description}</Text>
-                </View>
-                
+                </View>  
             )}
         />
 
