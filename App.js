@@ -1,21 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
+///Components Imports
+import HomeScreen from "./src/screens/Home"
+import Post from "./src/components/Post"
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View>
       <StatusBar style="auto" />
+      <SafeAreaView>
+          {/* <HomeScreen /> */}
+          <Post />
+      </SafeAreaView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
