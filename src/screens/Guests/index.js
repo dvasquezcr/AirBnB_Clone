@@ -3,29 +3,105 @@ import { View, Text, Pressable} from 'react-native';
 
 import styles from "./styles"
 
-const Row = ({ title, subTitle, count, setCount }) => {
+
+
+{/* ---------------------- Row 1 ------------------------ */}
+const RowAdults = () => {
+
+    const [adults, setAdults] = useState(0);
 
     return (
         <View style={styles.row}>
             
             <View>
-                <Text style={styles.title}>{title}</Text>
-                <Text style={styles.subTitle}>{subTitle}</Text>
+                <Text style={styles.title}>Adults</Text>
+                <Text style={styles.subTitle}>Ages 13 or above</Text>
             </View>
            
             <View style={styles.bottonsContainer}>
                 <Pressable
                     style={styles.button}
-                    onPress={() => setCount( Math.max(0, count - 1) )}
+                    onPress={() => setAdults( Math.max(0, adults - 1) )}
                 >
                     <Text style={styles.buttonText}>-</Text>
                 </Pressable>
 
-                <Text style={styles.buttonCount}> {count} </Text>
+                <Text style={styles.buttonCount}> {adults} </Text>
 
                 <Pressable
                     style={styles.button}
-                    onPress={() => setCount(count + 1)}
+                    onPress={() => setAdults(adults + 1)}
+                >
+                    <Text style={styles.buttonText}>+</Text>
+                </Pressable>
+            </View>
+            
+        </View>
+    )
+}
+
+
+{/* ---------------------- Row 2 ------------------------ */}
+const RowChildrens = () => {
+
+    const [childrens, setChildrens] = useState(0);
+
+    return (
+        <View style={styles.row}>
+            
+            <View>
+                <Text style={styles.title}>Childrens</Text>
+                <Text style={styles.subTitle}>Ages 2 to 12</Text>
+            </View>
+           
+            <View style={styles.bottonsContainer}>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => setChildrens( Math.max(0, childrens - 1) )}
+                >
+                    <Text style={styles.buttonText}>-</Text>
+                </Pressable>
+
+                <Text style={styles.buttonCount}> {childrens} </Text>
+
+                <Pressable
+                    style={styles.button}
+                    onPress={() => setChildrens(childrens + 1)}
+                >
+                    <Text style={styles.buttonText}>+</Text>
+                </Pressable>
+            </View>
+            
+        </View>
+    )
+}
+
+{/* ---------------------- Row 3 ------------------------ */}
+const RowInfants = () => {
+
+    const [infants, setInfants] = useState(0);
+
+    return (
+        <View style={styles.row}>
+            
+            <View>
+                <Text style={styles.title}>Infants</Text>
+                <Text style={styles.subTitle}>Ages 0 to 2</Text>
+            </View>
+           
+            <View style={styles.bottonsContainer}>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => setInfants( Math.max(0, infants - 1) )}
+                >
+                    <Text style={styles.buttonText}>-</Text>
+                </Pressable>
+
+                <Text style={styles.buttonCount}> {infants} </Text>
+
+                <Pressable
+                    style={styles.button}
+                    onPress={() => setInfants(infants + 1)}
                 >
                     <Text style={styles.buttonText}>+</Text>
                 </Pressable>
@@ -38,29 +114,15 @@ const Row = ({ title, subTitle, count, setCount }) => {
 //----------------------------------
 
 const GuestsScreen= () => {
-    const [adults, setAdults] = useState(0);
-    const [childrens, setChildrens] = useState(0);
-    const [infants, setInfants] = useState(0);
 
   return (
     <View>
-       <Row 
-            title={"Adults"} 
-            subTitle={"Ages 13 or above"} 
-            count={adults} setCount={setChildrens} 
-       />
+        
+        <RowAdults />
+        
+        <RowChildrens />
 
-        <Row 
-            title={"Childrens"} 
-            subTitle={"Ages 2 to 12"} 
-            count={childrens} setCount={setAdults} 
-       />
-
-        <Row 
-            title={"Infants"} 
-            subTitle={"Ages 0 to 2"} 
-            count={infants} setCount={setInfants} 
-       />
+        <RowInfants />
     </View>
    )
 };
