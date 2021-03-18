@@ -1,7 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-import HomeScreen from "../screens/Home"
+import ExploreNavigator from './ExploreNavigator'; 
+import HomeScreen from "../screens/Home";
 
 import {Fontisto, FontAwesome , FontAwesome5, Feather, EvilIcons } from "react-native-vector-icons";
 
@@ -16,7 +17,7 @@ const HomeTabNavigator = () => {
         }}
     >
         
-        <Tab.Screen name={"Home"} component={HomeScreen} 
+        <Tab.Screen name={"Explora"} component={ExploreNavigator} 
             options={{
                 tabBarIcon: ({color}) => (
                     <Fontisto name="search" size={25} color={color} />
@@ -24,7 +25,7 @@ const HomeTabNavigator = () => {
             }}
         />
 
-        <Tab.Screen name={"Saved"} component={HomeScreen} 
+        <Tab.Screen name={"Guardados"} component={HomeScreen} 
             options={{
                 tabBarIcon: ({color}) => (
                     <FontAwesome name="heart-o" size={25} color={color} />
@@ -32,7 +33,7 @@ const HomeTabNavigator = () => {
             }}
         />
 
-        <Tab.Screen name={"Trips"} component={HomeScreen} 
+        <Tab.Screen name={"Viajes"} component={HomeScreen} 
             options={{
                 tabBarIcon: ({color}) => (
                     <FontAwesome5 name="airbnb" size={25} color={color} />
@@ -40,7 +41,7 @@ const HomeTabNavigator = () => {
             }}
         />
 
-        <Tab.Screen name={"Inbox"} component={HomeScreen} 
+        <Tab.Screen name={"Mensajes"} component={HomeScreen} 
             options={{
                 tabBarIcon: ({color}) => (
                     <Feather name="message-square" size={25} color={color} />
@@ -48,7 +49,7 @@ const HomeTabNavigator = () => {
             }}
         />
 
-        <Tab.Screen name={"Profile"} component={HomeScreen} 
+        <Tab.Screen name={"Perfil"} component={HomeScreen} 
             options={{
                 tabBarIcon: ({color}) => (
                     <EvilIcons name="user" size={25} color={color} />

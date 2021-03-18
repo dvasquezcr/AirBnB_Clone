@@ -4,6 +4,8 @@ import { useNavigation } from "@react-navigation/native"
 
 import styles from "./styles"
 
+import SearchResults from "../SearchResults"
+
 
 
 {/* ---------------------- Row 1 ------------------------ */}
@@ -129,7 +131,17 @@ const GuestsScreen= () => {
                 <RowInfants />
             </View>
 
-            <Pressable style={styles.buttonSearch} onPress={()=> navigation.navigate("Search") }>
+            <Pressable 
+                    style={styles.buttonSearch} 
+                    // onPress={()=> 
+                    //     navigation.navigate("Home",{
+                    //         screen: "Explora",
+                    //         param: { screen: "Search"}
+                    // }) }
+                    onPress={()=> 
+                        navigation.navigate("Search"
+                    ) }
+            >
                 <Text style={{fontSize: 20, color:"white", fontWeight:"bold"}}>Search</Text>
             </Pressable>
 

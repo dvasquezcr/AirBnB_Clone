@@ -3,7 +3,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
  
     container:{
-        height: Dimensions.get("window").height,
+        height: "100%", //Dimensions.get("window").height,
         //height:"100%",
         justifyContent:"space-between",
     },
