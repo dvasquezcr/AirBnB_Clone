@@ -1,7 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
  
 const styles = StyleSheet.create({
  
+    container:{
+        height: Dimensions.get("window").height,
+        //height:"100%",
+        justifyContent:"space-between",
+    },
+
     row:{
         top:50,
         flexDirection: "row",
@@ -46,7 +52,17 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
         fontSize: 18,
         color: "black"
-    }
+    },
+
+    buttonSearch:{
+        backgroundColor:"#f15454",
+        alignItems: "center",
+        justifyContent: "center",
+        height:50,
+        marginHorizontal:20,
+        marginBottom: 20,
+        borderRadius: 10,
+    },
 
 });
  

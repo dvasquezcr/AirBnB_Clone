@@ -2,17 +2,15 @@ import React from 'react';
 import { View, Text, ImageBackground, Pressable } from 'react-native';
 import styles from "./styles"
 import { useNavigation } from "@react-navigation/native"
-
 import { AntDesign } from '@expo/vector-icons'; 
- 
+
 const HomeScreen = () => {
 
     const navigation = useNavigation();
 
-  return (
-    <View>
-        
-        <Pressable 
+    return (
+        <View style={styles.container}>
+            <Pressable 
                 style={styles.searchButton}
                 onPress={() => navigation.navigate("Destination Search") }
             >
@@ -20,14 +18,14 @@ const HomeScreen = () => {
 
                 <Text style={styles.searchButtonText}>¿A dónde vas?</Text>
             </Pressable>
-            
-       <ImageBackground 
-            style={styles.image}
-            source={require("../../../assets/images/wallpaper.jpg")} 
-       >
-            
 
-           <View style={styles.containerTitle}>
+            <ImageBackground 
+                    style={styles.image}
+                    source={require("../../../assets/images/wallpaper.jpg")} 
+            >
+                
+
+            {/* <View style={styles.containerTitle}> */}
 
                 <Text style={styles.title}>Siéntete un turista cerca de tu casa</Text>
 
@@ -37,13 +35,13 @@ const HomeScreen = () => {
                 >
                     <Text style={styles.buttonText}>Explora alojamientos cercanos</Text>
                 </Pressable>
-           
-           </View>
-          
+            
+            {/* </View> */}
+            
 
-       </ImageBackground>
-    </View>
-   )
+        </ImageBackground>
+        </View>
+    )
 };
  
 export default HomeScreen;

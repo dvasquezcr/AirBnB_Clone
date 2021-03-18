@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable} from 'react-native';
+import { useNavigation } from "@react-navigation/native"
 
 import styles from "./styles"
 
@@ -115,16 +116,25 @@ const RowInfants = () => {
 
 const GuestsScreen= () => {
 
-  return (
-    <View>
-        
-        <RowAdults />
-        
-        <RowChildrens />
+    const navigation = useNavigation();
 
-        <RowInfants />
-    </View>
-   )
+    return (
+        <View style={styles.container}>
+            
+            <View>
+                <RowAdults />
+                
+                <RowChildrens />
+
+                <RowInfants />
+            </View>
+
+            <Pressable style={styles.buttonSearch} onPress={()=> navigation.navigate("Search") }>
+                <Text style={{fontSize: 20, color:"white", fontWeight:"bold"}}>Search</Text>
+            </Pressable>
+
+        </View>
+    )
 };
  
 export default GuestsScreen;

@@ -1,40 +1,49 @@
 import { StyleSheet, Dimensions } from 'react-native';
  
 const styles = StyleSheet.create({
+
+    container:{
+        width: "100%",
+        height: Dimensions.get("screen").height,
+    },
+
     image: {
         width: "100%",
-        height: 500,
+        height: "100%",
         resizeMode: "cover",
         justifyContent: "center",
-        
-        flex: 1,
-        flexDirection:"column"
+        alignItems: "center",
     },
 
     containerTitle:{
         width: "90%",
         marginLeft: "5%",
         marginRight: "5%",
-        marginTop: 150,
+        //marginTop: 150,
+
+        justifyContent: "center",
+        
     },
 
     title:{
-        width:"100%",
+        width: "90%",
+        marginLeft: "5%",
+        marginRight: "5%",
         fontSize: 38,
         fontWeight: "bold",
         color:"#fff",
         letterSpacing: -1,
-        //paddingTop: 20,
-        
     },
 
     button:{
-        width:"75%",
+        width:"70%",
         height: 40,
         borderRadius: 10,
         marginTop:20,
         backgroundColor:"#fff",
-        
+        marginLeft: "5%",
+        alignSelf:"flex-start",
+        //centrar el texto
         justifyContent: "center",
         alignItems: "center",
     },
