@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 500,
         resizeMode: "cover",
-        //justifyContent: "center",
+        justifyContent: "center",
+        
         flex: 1,
         flexDirection:"column"
     },
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
         width: "90%",
         marginLeft: "5%",
         marginRight: "5%",
-        marginTop: 30,
+        marginTop: 150,
     },
 
     title:{
@@ -52,10 +53,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        //position:"absolute",
-        //top: 50,
-        marginTop: 70,
-        //zIndex: 100,
+        position:"absolute",
+        top: 50,
+        //marginTop: 70,
+        zIndex: 100,
     },
 
     searchButtonText:{

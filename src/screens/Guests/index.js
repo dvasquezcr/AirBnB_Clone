@@ -86,7 +86,7 @@ const RowInfants = () => {
             
             <View>
                 <Text style={styles.title}>Infants</Text>
-                <Text style={styles.subTitle}>Ages 0 to 2</Text>
+                <Text style={styles.subTitle}>Under 2</Text>
             </View>
            
             <View style={styles.bottonsContainer}>
