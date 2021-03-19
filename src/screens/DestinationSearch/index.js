@@ -1,39 +1,42 @@
-import React, {useState} from 'react';
-import { View,Text, TextInput, FlatList, Pressable} from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import styles from "./styles"
 import { useNavigation } from "@react-navigation/native"
 
-import searchResults from "../../../assets/data/search"
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete"
 
-import { Entypo } from '@expo/vector-icons';
+import SuggestionRow from "./SuggestionRow"
+
+
+
+
  
 const DestinationSearchScreen = () => {
 
-    const [inputText, setInputText] = useState("");
     const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-       
-       <TextInput 
-            style={styles.textInput}
-            placeholder="¿A dónde vas?"
-            value={inputText}
-            onChangeText={setInputText}
-       />
-
-        <FlatList 
-            data ={searchResults}
-            renderItem = {({item}) => (
-                <Pressable style={styles.row} onPress={()=> navigation.navigate("Guests") }>
-                    <View style={styles.iconContainer}>
-                        <Entypo name="location-pin" size={30} color="black" />
-                    </View>
-                    <Text style={styles.locationText}>{item.description}</Text>
-                </Pressable> 
-            )}
+        <GooglePlacesAutocomplete
+            styles={{
+                textInput: styles.textInput
+            }}
+            enablePoweredByContainer={false}
+            placeholder="Where are you going?"
+            onPress={(data, details = null) => {
+                // 'details' is provided when fetchDetails = true
+                console.log(data, details);
+                navigation.navigate("Guests");
+            }}
+            fetchDetails
+            query={{
+                key: "AIzaSyB9i2-6UXqb-gcyvkpKwSbddUfTn_lYLK0",
+                language: "en",
+                type:"(cities)"
+            }}
+            suppressDefaultStyles
+            renderRow={ (item) => <SuggestionRow item={item} />}
         />
-
     </View>
    )
 };
