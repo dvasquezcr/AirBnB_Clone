@@ -11,8 +11,6 @@ import SearchResultsScreen from "../screens/SearchResults"
 import GuestsScreen from "../screens/Guests"
 
 //import Bienvenido from "./ExploreNavigator"
-
-
  
 const Stack = createStackNavigator();
 
@@ -30,14 +28,14 @@ const Router = () => {
                   component={DestinationSearchScreen}
                   options={{ title:"Search your destination"}}
             />
-            <Stack.Screen name={"Search"} 
-                  component={SearchResultsScreen}
-                  options={{ title:"How many people?"}}
-            />
             <Stack.Screen name={"Guests"} 
                   component={GuestsScreen}
-                  options={{ title:"Accommodation"}}
+                  options={{ title:"How many people?"}}
             />
+            {/* <Stack.Screen name={"Post"} 
+                  component={PostScreen}
+                  options={{ title:"Accommodation"}}
+            /> */}
 
        </Stack.Navigator>
     </NavigationContainer>

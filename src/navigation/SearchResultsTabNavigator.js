@@ -8,8 +8,8 @@ const Tab = createMaterialTopTabNavigator();
 const SearchResultsTabNavigator = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen name={"list"} Component={SearchResults}/>
-            <Tab.Screen name={"map"} Component={SearchResults}/>
+            <Tab.Screen name={"list"} component={SearchResults}/>
+            <Tab.Screen name={"map"} component={SearchResults}/>
         </Tab.Navigator>
     )
 };

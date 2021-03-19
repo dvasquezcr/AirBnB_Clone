@@ -139,7 +139,7 @@ const GuestsScreen= () => {
                     //         param: { screen: "Search"}
                     // }) }
                     onPress={()=> 
-                        navigation.navigate("Search"
+                        navigation.navigate("SearchResults"
                     ) }
             >
                 <Text style={{fontSize: 20, color:"white", fontWeight:"bold"}}>Search</Text>
