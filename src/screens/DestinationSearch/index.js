@@ -30,7 +30,7 @@ const DestinationSearchScreen = () => {
             }}
             fetchDetails
             query={{
-                key: "AIzaSyB9i2-6UXqb-gcyvkpKwSbddUfTn_lYLK0",
+                key: "AIzaSyACYZdUuc2JDofD6CktLWTCNkuBmhPBbqA",
                 language: "en",
                 type:"(cities)"
             }}
