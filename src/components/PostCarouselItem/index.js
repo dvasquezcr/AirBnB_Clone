@@ -8,7 +8,7 @@ const Post= (props) => {
    const width = useWindowDimensions().width;
 
    return (
-    <View style={styles.container, { width: width - 60 }}>
+    <View style={ styles.container, { width: width - 40, paddingLeft: 5 }}>
        <View style={styles.innerContainer}>
             <Image 
                style={styles.image}
