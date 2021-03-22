@@ -2,6 +2,7 @@ import React , { useState} from 'react';
 import { View } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 //-------------------
+import PostCarouselItem from "../../components/PostCarouselItem"
 import CustomMarker from "../../components/CustomMarker"
 import places from "../../../assets/data/feed"
  
@@ -21,7 +22,6 @@ const SearchResultsMap = () => {
                longitudeDelta: 0.8,
             }}
         >
-           {console.log(places)}
 
            {places.map(place => (
               <CustomMarker 
@@ -34,6 +34,10 @@ const SearchResultsMap = () => {
            )}
            
         </MapView>
+
+        <View style={{ position: "absolute", bottom:20 }}>
+            <PostCarouselItem post={places[0]} />
+        </View>
     </View>
    )
 };
