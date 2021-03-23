@@ -1,4 +1,4 @@
-import React , { useState} from 'react';
+import React , { useState, useEffect, useRef } from 'react';
 import { View, FlatList, useWindowDimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 //-------------------
@@ -9,13 +9,45 @@ import { ScreenContainer } from 'react-native-screens';
  
 const SearchResultsMap = () => {
 
-   const [ selectedPlaceId, setselectedPlaceId ] = useState(null)
+   const [ selectedPlaceId, setSelectedPlaceId ] = useState(null);
    const width = useWindowDimensions().width;
+   
+   const flatlist = useRef();
+   const map = useRef();
+
+   //FlatList Carrousel: cuando se mueve el carousel se mueve en el mapa
+   const viewConfig = useRef({ itemVisiblePercentThreshold: 70 });
+   const onViewChanged = useRef(({viewableItems}) => {
+      if (viewableItems.length > 0){
+         const selectedPlace = viewableItems[0].item
+         setSelectedPlaceId(selectedPlace.id)
+      }
+   })
+
+   useEffect( ()=> {
+      //cuando selecciona precio en mapa se mueve el carousel
+      if (!selectedPlaceId || !flatlist) {
+         return; //si son nulos no hace nada
+      }
+      const index = places.findIndex( place => place.id === selectedPlaceId )
+      flatlist.current.scrollToIndex({ index })
+
+      const selectedPlace = places[index];
+      const region = {
+         latitude: selectedPlace.coordinate.latitude,
+         longitude: selectedPlace.coordinate.longitude,
+         latitudeDelta: 0.7,
+         longitudeDelta: 0.7,
+      }
+      map.current.animateToRegion(region);
+
+   },[selectedPlaceId])
 
    return (
     
     <View style={{width:"100%", height:"100%" }}>
        <MapView
+            ref={map}
             provider={PROVIDER_GOOGLE}
             style={{width:"100%", height:"100%" }}
             initialRegion={{
@@ -31,7 +63,7 @@ const SearchResultsMap = () => {
                   coordinate = {place.coordinate}
                   price = {place.newPrice}
                   isSelected={place.id === selectedPlaceId}
-                  onPress ={() => setselectedPlaceId(place.id)}
+                  onPress ={() => setSelectedPlaceId(place.id)}
               />)
               
            )}
@@ -40,6 +72,7 @@ const SearchResultsMap = () => {
 
         <View style={{ position: "absolute", bottom:10 }}>
             <FlatList 
+               ref={flatlist} //referencia al useRef en UseEffect
                data={places}
                renderItem ={({item}) => <PostCarouselItem post={item} /> }
                horizontal
@@ -47,6 +80,13 @@ const SearchResultsMap = () => {
                snapToInterval = {width - 40}
                snapToAlignment={"center"}
                decelerationRate={"fast"}
+               
+               //cuando cambia el carrusel toma como activo el Item 
+               //que ocupe el 70% de la pantalla
+               //solo admite el valor como useRef 
+               viewabilityConfig={viewConfig.current} 
+               //Item que se visualiza en pantalla
+               onViewableItemsChanged={onViewChanged.current}
             />
             
         </View>
