@@ -29,6 +29,7 @@ const SearchResultsMap = () => {
       if (!selectedPlaceId || !flatlist) {
          return; //si son nulos no hace nada
       }
+
       const index = places.findIndex( place => place.id === selectedPlaceId )
       flatlist.current.scrollToIndex({ index })
 
